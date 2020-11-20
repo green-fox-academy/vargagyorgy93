@@ -1,0 +1,2 @@
+A patchwork ki lett ügyesen törölve, de ha lesz időm mindent megcsinűlok, ami itt van: 
+https://github.com/green-fox-academy/teaching-materials/tree/master/workshop/command-line

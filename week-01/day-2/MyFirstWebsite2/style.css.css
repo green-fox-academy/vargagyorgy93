@@ -1,0 +1,39 @@
+body {
+    background-image: url(topography.png);
+    font-family: "Open San", sans-serif;
+}
+header > ul{
+    background-color: #333333;
+    list-style-type: none;
+    text-align: right;
+    width: 97%;
+}
+header > ul > li{
+    color: #ff0099;
+    display: inline-block;
+    margin: 15px;
+}
+header >ul img{
+    float: left;
+    text-align: center;
+}
+.h2{
+    color: #ff0099;
+}
+.Technology{
+    margin: 30px;
+    text-align: center;
+    padding: 3px;
+}
+.all{
+    margin: 0 60px;
+    text-align: left;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: medium;
+    line-height: normal;
+}
+#pontok{ 
+    text-align: center;
+}
+
