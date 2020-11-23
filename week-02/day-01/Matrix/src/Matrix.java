@@ -25,9 +25,9 @@ public class Matrix {
         for (int i = 0; i < a; i++) {
             for (int j = 0; j < a; j++) {
                 if (j == i) {
-                    System.out.print(matrix[1][0]);
+                    System.out.print(matrix[1][0] + " ");
                 } else {
-                    System.out.print(matrix[0][0]);
+                    System.out.print(matrix[0][0] + " ");
                 }
             }
             System.out.println();
