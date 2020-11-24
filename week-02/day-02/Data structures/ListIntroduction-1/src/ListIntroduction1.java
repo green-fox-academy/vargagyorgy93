@@ -31,9 +31,6 @@ public class ListIntroduction1 {
 
         names.remove(1);
 
-//        for (String removed : names) {
-//            System.out.println(removed);
-//        }
 
         Collections.reverse(names);
         for (String reverse : names) {
