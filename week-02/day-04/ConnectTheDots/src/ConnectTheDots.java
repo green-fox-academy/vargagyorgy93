@@ -1,7 +1,9 @@
 import javax.swing.*;
 
 import java.awt.*;
+import java.util.HashMap;
 
+import static com.sun.tools.attach.VirtualMachine.list;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class ConnectTheDots {
@@ -14,8 +16,21 @@ public class ConnectTheDots {
         // {120, 100}, {85, 130}, {50, 100}}
 
 
+        graphics.setColor(Color.GREEN);
 
+        int[] xCoords = {10, 290, 290, 10};
+        int[] yCoords = {10, 10, 290, 290};
+        int lenght = 4;
+        int[] box = {10, 10, 290, 10, 290, 290, 10, 290};
+
+        int[] x2Coords = {50, 70, 80, 90, 100, 120, 85, 50,};
+        int[] y2Coords = {100, 70, 90, 90, 70, 100, 130, 100};
+        int lenght2 = 8;
+
+        graphics.drawPolygon(xCoords, yCoords, lenght);
+        graphics.drawPolygon(x2Coords, y2Coords, lenght2);
     }
+
 
     // Don't touch the code below
     static int WIDTH = 320;
