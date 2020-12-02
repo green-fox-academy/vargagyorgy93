@@ -24,7 +24,7 @@ public class CopyFile {
         } catch (IOException ex) {
             return false;
         }
-        
+          
         Path path = Paths.get(fileTo);
         try {
             Files.write(path, copiedContent);
