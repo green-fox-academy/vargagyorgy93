@@ -8,6 +8,6 @@ public class PostIt {
         textColor = tc;
         this.text = text;
     }
-
-
 }
+
+
