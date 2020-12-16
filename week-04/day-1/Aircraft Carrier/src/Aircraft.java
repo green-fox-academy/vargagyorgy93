@@ -15,6 +15,14 @@ private String type = "";
 
     }
 
+    public int getMaxAmmo() {
+        return maxAmmo;
+    }
+
+    public int getAmmunition() {
+        return ammunition;
+    }
+
     public void figt(){
 
         if (this.ammunition == 0){
@@ -29,7 +37,6 @@ private String type = "";
 
     public void refill(int number){
 
-
             if (maxAmmo - ammunition < number) {
                 ammunition = maxAmmo;
                 System.out.println("Remaining refillable ammo after filling: " + (number - maxAmmo));
@@ -37,7 +44,6 @@ private String type = "";
                 ammunition += number;
                 System.out.println("No remaining ammos");
             }
-
 
     }
 
@@ -49,11 +55,13 @@ private String type = "";
         return this.getClass().getSimpleName() + ", " + "Ammo: " + this.ammunition + ", " + " Base Damage: " + this.baseDamage + ", " + "All Damage: " + allDamage;
     }
 
-    public void isPriority(){
+    public boolean isPriority(){
         if (this.type.equals("F35")){
-            System.out.println("True");
+//            System.out.println("True");
+            return true;
         } else {
-            System.out.println("False");
+//            System.out.println("False");
+            return false;
         }
     }
 
