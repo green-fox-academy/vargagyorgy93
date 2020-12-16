@@ -15,6 +15,11 @@ private String type = "";
 
     }
 
+
+    public int getAllDamage() {
+        return allDamage;
+    }
+
     public int getMaxAmmo() {
         return maxAmmo;
     }
@@ -23,26 +28,30 @@ private String type = "";
         return ammunition;
     }
 
-    public void figt(){
+    public int figt(){
 
         if (this.ammunition == 0){
             System.out.println("Cant fight before refill!");
+            return 0;
         } else {
-            int damage = baseDamage / ammunition;
+            int damage = baseDamage * ammunition;
             ammunition = 0;
-            System.out.println("Dealed damage: " + damage);
+//            System.out.println("Dealed damage: " + damage);
             this.allDamage += damage;
+            return damage;
         }
     }
 
-    public void refill(int number){
+    public int refill(int number){
 
             if (maxAmmo - ammunition < number) {
                 ammunition = maxAmmo;
-                System.out.println("Remaining refillable ammo after filling: " + (number - maxAmmo));
+//                System.out.println("Remaining refillable ammo after filling: " + (number - maxAmmo));
+               return (number - maxAmmo);
             } else {
                 ammunition += number;
-                System.out.println("No remaining ammos");
+//                System.out.println("No remaining ammos");
+                return 0;
             }
 
     }

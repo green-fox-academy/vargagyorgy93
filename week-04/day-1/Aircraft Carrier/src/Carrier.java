@@ -1,17 +1,22 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Carrier {
     List<Aircraft> aircrafts;
     int storedAmmo = 0;
     int healthPoint = 0;
+    int totalDamage =0;
+
 
     public Carrier(int storedAmmo, int healthPoint) {
+        aircrafts = new ArrayList<>();
         this.storedAmmo = storedAmmo;
         this.healthPoint = healthPoint;
     }
 
-    public void add() {
-        aircrafts.add(new Aircraft());
+    public void add(int baseDamage, int maxAmmo, String type) {
+//        Aircraft aircraft1 = new Aircraft(aircraft);
+        aircrafts.add(new Aircraft(baseDamage, maxAmmo, type));
     }
 
     public int neededAmmo(Carrier carrier) {
@@ -51,4 +56,39 @@ public class Carrier {
         }
 
     }
+
+
+    public void figth(Carrier other){
+        for (int i = 0; i < aircrafts.size(); i++) {
+            aircrafts.get(i).figt();
+            totalDamage += aircrafts.get(i).getAllDamage();
+        }
+        other.healthPoint -= totalDamage;
+    }
+
+
+
+    public void getStatus(){
+
+//        totalDamage =0;
+
+        if (this.healthPoint == 0){
+            System.out.println("It's dead Jim :(");
+        } else {
+            System.out.println("HP: " + healthPoint + ", " + "Aircraft count: "
+                    + aircrafts.size() + ", " + "Ammo Storage:" + storedAmmo + ", " + "Total damage: "
+                    + totalDamage);
+            System.out.println("Aircrafts:");
+            for (int i = 0; i < aircrafts.size(); i++) {
+                System.out.println(aircrafts.get(i).getStatus());
+//                aircrafts.get(i).getStatus();
+                totalDamage += aircrafts.get(i).getAllDamage();
+            }
+            System.out.println();
+
+        }
+
+    }
+
+
 }
