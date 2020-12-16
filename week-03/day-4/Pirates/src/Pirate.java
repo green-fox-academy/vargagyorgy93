@@ -15,7 +15,7 @@ public class Pirate {
             System.out.println("He is dead");
         } else {
             Random random = new Random();
-            this.drunkness += random.nextInt(10);
+            this.drunkness += random.nextInt(10)+1;
             this.drinkSomeRumCounter += 1;
         }
 
@@ -23,7 +23,7 @@ public class Pirate {
     }
 
     public void howsItGoningMate() {
-        if (this.dead == "dead") {
+        if (this.dead.equals("dead")) {
             System.out.println("He is dead");
         } else {
             passOut = "awake";
@@ -66,90 +66,5 @@ public class Pirate {
             System.out.println("One of them is already dead!");
         }
     }
-
-
-
-
-
-
-//    public Pirate(String name){
-//        Scanner scanner = new Scanner(System.in);
-//        name = scanner.next();
-//        this.name = name;
-//
-//    }
-//    public Pirate(){
-//
-//    }
-//
-//
-//    public void drinkSomeRum() {
-//        if (alive = true) {
-//            drunkness++;
-//        } else {
-//            System.out.println("He is dead");
-//        }
-//    }
-//
-//    public void howItGoingMate() {
-//        if (alive = true) {
-//            if (drunkness < 5) {
-//                System.out.println("Pour me anudder!");
-//            } else {
-//                System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
-////                passOut = true;
-//                drunkness = 0;
-//            }
-//        } else {
-//            System.out.println("He is dead");
-//        }
-//    }
-//
-//    public void die() {
-//        alive = false;
-//    }
-//
-//    public void drawl(Pirate enemy, Pirate pirate){
-//        Random random = new Random();
-//        int a = random.nextInt(3);
-//        if (enemy.alive = true){
-//            if (a == 1){
-//                enemy.die();
-//            }else if (a == 2){
-//                pirate.die();
-//            } else {
-//                enemy.passOut = true;
-//                pirate.passOut = true;
-//            }
-//        }
-//    }
-
-//
-//
-//    public void drinkSomeRum(int witchPirate) {
-//        if (pirates.get(witchPirate).alive = true) {
-//            pirates.get(witchPirate).drunkness++;
-//        } else {
-//            System.out.println("He is dead");
-//        }
-//    }
-//
-//    public void howItGoingMate(int witchPirate) {
-//        if (pirates.get(witchPirate).alive = true) {
-//            if (pirates.get(witchPirate).drunkness > 5) {
-//                System.out.println("Pour me anudder!");
-//            } else {
-//                System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
-//                pirates.get(witchPirate).drunkness = 0;
-//            }
-//        } else {
-//            System.out.println("He is dead");
-//        }
-//    }
-//
-//    public void die(int witchPirate) {
-//        pirates.get(witchPirate).alive = false;
-//    }
-
 
 }
