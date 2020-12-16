@@ -8,11 +8,5 @@ public class BattleApp {
 
         System.out.println(ship.battle(otherShip));
 
-        Armada armada = new Armada();
-        Armada otherArmada = new Armada();
-        String weWon = armada.war(otherArmada);
-
-        System.out.println(weWon);
-
     }
 }
