@@ -65,7 +65,7 @@ public class Carrier {
         }
         other.healthPoint -= totalDamage;
     }
-    
+
 
     public void getStatus(){
 

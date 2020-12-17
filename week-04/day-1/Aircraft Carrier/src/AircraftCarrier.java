@@ -1,24 +1,45 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class AircraftCarrier {
 
     public static void main(String[] args) {
 
 
-        Carrier carrier = new Carrier(2300, 5000);
-        carrier.add(4, 5, "F16");
-        carrier.add(6,7, "F35");
-        carrier.fill();
+
+
+
+        List<String> stringList = new ArrayList<>();
+        String[] strinArray;
+
+        Aircraft hali = new Aircraft();
+        hali.readFile("file.txt");
+
+        hali.writeOverFile("file.txt");
+        hali.readFile("file.txt");
+
+
+
+
+
+
+
+//        Carrier carrier = new Carrier(2300, 5000);
+//        carrier.add(4, 5, "F16");
+//        carrier.add(6,7, "F35");
+//        carrier.fill();
+////        carrier.getStatus();
+//
+//
+//        Carrier carrier2 = new Carrier(2300, 62);
+//        carrier2.add(4, 5, "F16");
+//        carrier2.add(6,7, "F35");
+//        carrier2.fill();
+////        carrier2.getStatus();
+//
+//        carrier.figth(carrier2);
 //        carrier.getStatus();
-
-
-        Carrier carrier2 = new Carrier(2300, 62);
-        carrier2.add(4, 5, "F16");
-        carrier2.add(6,7, "F35");
-        carrier2.fill();
 //        carrier2.getStatus();
-
-        carrier.figth(carrier2);
-        carrier.getStatus();
-        carrier2.getStatus();
 
 
 
