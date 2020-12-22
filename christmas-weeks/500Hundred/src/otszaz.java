@@ -13,8 +13,9 @@ public class otszaz {
     public static void main(String[] args) {
 
         Tasks.fileReader("penztar.txt");
-        Tasks.ertek();
+        Tasks.sumIntoTxt();
     }
+
 
 
 }
