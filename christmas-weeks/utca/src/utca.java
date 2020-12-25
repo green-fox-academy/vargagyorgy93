@@ -191,15 +191,11 @@ public class utca {
         File file = new File(fileName);
         FileWriter fr = null;
         int counter = 0;
-        List<Integer> houseNumber = new ArrayList<>();
-        List<String> fences = new ArrayList<>();
         for (int i = 0; i < streetData.size(); i++) {
             splittedDatas = Arrays.asList(streetData.get(i).split(" "));
             if (splittedDatas.get(0).equals("1")) {
                 counter += 1;
-                houseNumber.add((counter * 2) - 1);
                 for (int j = 0; j < Integer.parseInt(splittedDatas.get(1)); j++) {
-                    fences.add(splittedDatas.get(2));
                 }
             }
         }
@@ -213,8 +209,6 @@ public class utca {
             splittedDatas = Arrays.asList(streetData.get(i).split(" "));
             if (splittedDatas.get(0).equals("1")) {
                 counter += 1;
-                houseNumber.add((counter * 2) - 1);
-                fences.add(splittedDatas.get(1));
                 for (int j = 0; j < Integer.parseInt(splittedDatas.get(1)); j++) {
                     try {
                         fr.write(splittedDatas.get(2));
@@ -239,9 +233,7 @@ public class utca {
             splittedDatas = Arrays.asList(streetData.get(i).split(" "));
             if (splittedDatas.get(0).equals("1")) {
                 counter += 1;
-                houseNumber.add((counter * 2) - 1);
                 houseNum = ((counter * 2) - 1);
-                fences.add(splittedDatas.get(1));
                 for (int j = 0; j < Integer.parseInt(splittedDatas.get(1)); j++) {
                     if (j == 0) {
                         try {
@@ -252,6 +244,9 @@ public class utca {
                         }
                     } else {
                         if (houseNum > 9 && j == Integer.parseInt(splittedDatas.get(1)) - 1) {
+
+                        }
+                         else if (houseNum > 99 && j == Integer.parseInt(splittedDatas.get(1)) - 2) {
 
                         } else {
                             try {
@@ -266,13 +261,6 @@ public class utca {
 
             }
         }
-
-
-        for (int i = 0; i < fences.size(); i++) {
-
-        }
-
-
         try {
             fr.close();
         } catch (IOException e) {
