@@ -1,4 +1,7 @@
+import javax.swing.*;
+import java.awt.*;
 import java.util.*;
+import java.util.List;
 
 public class tik_tak_to {
     public static void main(String[] args) {
@@ -21,7 +24,7 @@ public class tik_tak_to {
         List<Integer> usedNumbers = new ArrayList<>();
         int step;
         boolean weHaveAWinner = false;
-
+//        Board.gameBoard();
         System.out.println(" |_ " + board.get(1) + " _|_ " + board.get(2) + " _|_ " + board.get(3) + " _| ");
         System.out.println(" |_ " + board.get(4) + " _|_ " + board.get(5) + " _|_ " + board.get(6) + " _| ");
         System.out.println(" |_ " + board.get(7) + " _|_ " + board.get(8) + " _|_ " + board.get(9) + " _| ");
@@ -65,6 +68,7 @@ public class tik_tak_to {
             }
         }
     }
+
 
     public static String checkForWinner(HashMap<Integer, String> map, String winner) {
         List<Integer> resultX = new ArrayList<>();
@@ -117,4 +121,14 @@ public class tik_tak_to {
         System.out.println("Wrong move, please enter another move!");
         return scanner.nextInt();
     }
+
+//    public static void gameBoard(){
+//        JFrame f = new JFrame("Million Dollar Game");
+//        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        Board tikTakTo = new Board();
+//        f.add(tikTakTo);
+//        f.setSize(400, 400);
+//        f.setVisible(true);
+//    }
+
 }

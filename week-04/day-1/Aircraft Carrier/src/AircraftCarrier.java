@@ -6,9 +6,6 @@ public class AircraftCarrier {
     public static void main(String[] args) {
 
 
-
-
-
         List<String> stringList = new ArrayList<>();
         String[] strinArray;
 
