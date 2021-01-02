@@ -1,0 +1,9 @@
+.gitignore
+.idea/
+GymnocercusFoundationNormalExam.iml
+README.md
+Test/
+lista.txt
+out/
+src/
+temps.txt
