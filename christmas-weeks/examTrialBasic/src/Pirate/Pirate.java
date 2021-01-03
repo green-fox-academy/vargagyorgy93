@@ -5,12 +5,12 @@ public class Pirate {
     int amounOfGold = 10;
     int helathPoints = 10;
     boolean isCaptain = false;
-    boolean hasWooodenLeg = false;
+    boolean hasWoodenLeg = false;
 
     public Pirate(String name, boolean isCaptain, boolean hasWooodenLeg) {
         this.name = name;
         this.isCaptain = isCaptain;
-        this.hasWooodenLeg = hasWooodenLeg;
+        this.hasWoodenLeg = hasWooodenLeg;
     }
 
     public void work(){
@@ -31,11 +31,12 @@ public class Pirate {
         }
     }
 
+    @Override
     public String toString(){
-        if (this.hasWooodenLeg){
-            return "Hello, I'm " + this.name + ". I have a wooden leg and " + amounOfGold + " golds.";
+        if (this.hasWoodenLeg){
+            return "Hello, I'm " + this.name + ". I have a wooden leg and " + this.amounOfGold + " golds.";
         } else {
-            return "Hello, I'm " + this.name + ". I still have my real legs and " + amounOfGold + " golds.";
+            return "Hello, I'm " + this.name + ". I still have my real legs and " + this.amounOfGold + " golds.";
         }
     }
 

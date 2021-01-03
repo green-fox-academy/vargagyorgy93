@@ -9,7 +9,7 @@ public class Ship {
     public List<String> getPoorPirates() {
         List<String> poorPirates = new ArrayList<>();
         for (int i = 0; i < pirates.size(); i++) {
-            if (pirates.get(i).hasWooodenLeg && pirates.get(i).amounOfGold < 15) {
+            if (pirates.get(i).hasWoodenLeg && pirates.get(i).amounOfGold < 15) {
                 poorPirates.add(pirates.get(i).name);
             }
         }
@@ -24,8 +24,10 @@ public class Ship {
         return sum;
     }
 
-    public void lastDayonTheShip(Pirate pirate) {
-        pirate.party();
+    public void lastDayOnTheShip() {
+        for (int i = 0; i < pirates.size(); i++) {
+            pirates.get(i).party();
+        }
     }
 
     public void prepareForBattle() {
@@ -33,8 +35,8 @@ public class Ship {
             for (int j = 0; j < 5; j++) {
                 pirates.get(i).work();
             }
-            lastDayonTheShip(pirates.get(i));
         }
+            lastDayOnTheShip();
     }
 
 

@@ -9,7 +9,6 @@ import java.util.List;
 public class avaragetemperature {
     public static void main(String[] args) {
         System.out.println(getColdestAndHottestYears("temps.txt"));
-
     }
 
     public static String getColdestAndHottestYears(String fileName) {

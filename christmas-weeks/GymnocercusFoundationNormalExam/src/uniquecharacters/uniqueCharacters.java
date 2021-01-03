@@ -4,11 +4,10 @@ import java.util.*;
 
 public class uniqueCharacters {
     public static void main(String[] args) {
-        uniqueCharacters unique = new uniqueCharacters();
-        System.out.println(unique.getuniqueCharacters(""));
+        System.out.println(getuniqueCharacters("Anagram"));
     }
 
-    public List<Character> getuniqueCharacters(String givenString) {
+    public static List<Character> getuniqueCharacters(String givenString) {
         List<Character> result = new ArrayList<>();
         HashMap<Character, Integer> charactersAndOccurances = new HashMap<>();
         for (int i = 0; i < givenString.length(); i++) {

@@ -17,11 +17,11 @@ public class uniqueCharactersTest {
     public void isHappy() {
         given = "anagrammok";
         List<Character> result = new ArrayList<>();
-        result.add('r');
         result.add('g');
         result.add('k');
         result.add('n');
         result.add('o');
+        result.add('r');
         assertEquals(result, unique.getuniqueCharacters(given));
 
     }
@@ -31,14 +31,13 @@ public class uniqueCharactersTest {
         given = "Never";
         List<Character> result = new ArrayList<>();
         result.add('N');
-        result.add('v');
         result.add('r');
+        result.add('v');
         assertEquals(result, unique.getuniqueCharacters(given));
     }
 
-    @Test (expected = NullPointerException.class)
+    @Test(expected = NullPointerException.class)
     public void nullTest() {
-        given = null;
-        unique.getuniqueCharacters(given);
+        unique.getuniqueCharacters(null);
     }
 }
