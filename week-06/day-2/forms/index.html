@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" media="screen" href="styles.css">
+    </head>
+    <body>  
+       <div class="flex-container"> 
+        <div>
+        <p>Sing up</p>
+        <form action="action=https://newsletter-ws.herokuapp.com/register" method="POST">
+            <label for="name"></label>
+            <input type="text" placeholder="Username" name="name" required>  
+        </form>
+
+        <form action="action=https://newsletter-ws.herokuapp.com/register" method="POST">
+            <label for="email"></label>
+            <input type="text" placeholder="E-mail" id="email" name="email">
+        </form>
+        
+        <form action="action=https://newsletter-ws.herokuapp.com/register" method="POST">
+            <label for="password"></label>
+            <input type="password" placeholder="Password" id="password" name="password">
+        </form>
+
+        <form action="action=https://newsletter-ws.herokuapp.com/register" method="POST">
+            <label for="passwordConfirmation"></label>
+            <input type="passwordConfirmation" placeholder="Retype password" id="passwordConfirmation" name="passwordConfirmation">
+        </form>
+
+        <button id="submit" type="submit">SING ME UP</button>
+    </div>
+    <div>
+        <div class="OR"></div>
+        <button id="OR" type="submit">OR</button>
+    </div>
+</div>
+</div>
+<!--<table>
+    <thead>
+        <tr>
+            <th>Sing up</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                <form action="action=https://newsletter-ws.herokuapp.com/register" method="POST">
+                    <label for="name"></label>
+                    <input type="text" placeholder="Username" name="name" required>  
+                </form>
+            </td>
+            <td>OR</td>
+        </tr>
+    </thead>
+</table>-->
+    </body>
+</html>

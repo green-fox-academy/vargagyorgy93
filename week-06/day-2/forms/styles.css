@@ -1,0 +1,49 @@
+body{
+    background-color: #A9A9A9;
+}
+
+#submit{
+    background-color: green;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-bottom: 25px;
+}
+
+div {
+    background-color: white;
+    width: 50%;
+}
+
+input{
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-color: grey;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+p{
+    padding-top: 15px;
+    margin: 15px ;
+}
+
+.flex-container {
+    display: flex;
+  }
+
+  .OR{
+      margin-top: 125px;
+  }
+
+  span{
+      background-size: 4px;
+      background-color: lightgray;
+      border-radius: 50px;
+  }
+  
+  #OR{
+    background-color:lightgray;
+    border-radius: 50%;
+}
+
