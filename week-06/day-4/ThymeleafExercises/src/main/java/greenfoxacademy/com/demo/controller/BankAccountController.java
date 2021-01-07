@@ -15,7 +15,7 @@ public class BankAccountController {
     public List<BankAccount> listOfBankAccounts = new ArrayList<>();
     BankAccount account1 = new BankAccount("Simba", 2000.00, "lion", false);
 
-    public BankAccountController(){
+    public BankAccountController() {
         listOfBankAccounts.add(new BankAccount("Pumba", 4000.00, "warthog", false));
         listOfBankAccounts.add(new BankAccount("Timon", 2000.00, "meerkat", false));
         listOfBankAccounts.add(new BankAccount("Mufasa", 8000.00, "lion", true));
@@ -34,8 +34,9 @@ public class BankAccountController {
     }
 
     @GetMapping("/multipleAccounts")
-    public String multipleAccounts(Model model) { 
+    public String multipleAccounts(Model model) {
         model.addAttribute("accounts", listOfBankAccounts);
+        model.addAttribute("king", "KING");
         return "multipleAccounts";
     }
 }
