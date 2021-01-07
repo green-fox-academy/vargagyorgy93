@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome Calorie counter</title>
+</head>
+<body>
+<!--Hello <span th:text="${name}"/>-->
+Hello Glados
+<h1>CalorieCounter</h1>
+<!--<br>-->
+<!--<div>-->
+<!--    Food name: <span th:text="${food.name}"/>-->
+<!--    Calories: <span th:text="${food.amount}"/>-->
+<!--</div>-->
+<!--<br>-->
+
+<table>
+    <tr th:each="food: ${foods}">
+        <td th:text="${food.name}"/>
+        <td th:text="${food.amount}"/>
+<!--        <td>-->
+<!--            <a th:href="@{/edit(foodId=${food.id})}">Modify food</a>-->
+<!--        </td>-->
+</table>
+<p>
+    Total calories = <span th:text="${totalAmount}"/>
+</p>
+<h2>
+    Add new Food
+</h2>
+<form action="/save-food" method="post">
+    <label for="name"> Name of Food</label>
+    <input type="text" id="name" name="name">
+
+    <br>
+
+    <label for="amount" > Amount of Calories </label>
+    <input type="number" id="amount" name="amount">
+    <br>
+    <button type="submit"> Save</button>
+</form>
+</body>
+</html>

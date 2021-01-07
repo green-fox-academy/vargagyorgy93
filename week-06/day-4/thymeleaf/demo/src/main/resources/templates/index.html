@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    Hello <span th:text="${name}"/>
+
+    Food name: <span th:text="${foodName}"/>
+    <br>
+    Calorie amount: <span th:text="${amount}"/>
+    <br>
+
+    <h1> Calorie counter</h1>
+
+    <table>
+        <tr th:each="food: ${foodList}">
+            <td th:text="${food.name}"/>
+            <td th:text="${food.amount}"/>
+            <td>
+                <a th:href="@{/edit(foodId=${food.id})}">Oops, made an error</a>
+            </td>
+        </tr>
+    </table>
+Calories consumed: <span th:text="${caloriesEaten}"/>
+
+<div>
+    <form action="/save-food" method = "post">
+        <label for="name">Mit ettél?</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <label for="amount">Mennyi kalória volt?</label>
+        <input type="number" id="amount" name="amount">
+        <br>
+        <button type="submit">Add food </button>
+    </form>
+</div>
+</body>
+</html>

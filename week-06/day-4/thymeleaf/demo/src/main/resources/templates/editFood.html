@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> Calorie Corrector</title>
+</head>
+<body>
+<h2>Edit Food</h2>
+
+<form method="post" th:action="@{/updateFood(foodId=${food.id})}" th:object="${food}">
+
+    <label for="name"> Name </label>
+    <input type="text" id="name" th:field = "*{name}" >
+    <br>
+    <label for="amount"> Amount </label>
+    <input type="number" id="amount" th:field = "*{amount}">
+    <br>
+    <button type="submit"> Save </button>
+
+</form>
+
+</body>
+</html>

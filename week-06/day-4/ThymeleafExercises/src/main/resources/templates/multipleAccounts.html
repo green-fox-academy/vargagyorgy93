@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Awesome Bank Accounts #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<h1>Bank Accounts</h1>
+<!--    <div>-->
+<!--    Name: <span th:text="${account.name}"/>-->
+<!--    Balance: <span th:text="${account.balance}"/>-->
+<!--    Animal type: <span th:text="${account.animalType}"/>-->
+<!--    </div>-->
+<table>
+    <tr th:each="account: ${accounts}">
+        <td th:text="${1 + accountStat.index }"/>
+        <td th:text="'Account owner: ' + ${account.name}"/>
+        <td th:text="'Balance: ' + ${account.strDouble}"/>
+        <td th:text="'Zebra'"/>
+        <td th:text="'Animal type: ' + ${account.animalType}"/>
+        <td th:text="if(${account.king})"/>
+    </tr>
+</table>
+</body>
+</html>
