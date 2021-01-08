@@ -1,0 +1,82 @@
+#head-container {
+    /*set the width full screen*/
+    width: 100%;
+    /*Set the parante <div> to be flex(flexbox) , after that u can move the inside element with the flex-box functions */
+    display: flex;
+    /*set the link apart of each other with evenly distributed spaces*/
+    justify-content: space-between;
+}
+/*take all the decorations of from the links*/
+a{
+    text-decoration: none;
+}
+h1 {
+    /*all h1 will be this color*/
+    color: lightskyblue;
+}
+body {
+    /*set the margin both side n% */
+    margin-left: 10%;
+    margin-right: 10%;
+}
+hr {
+    /* set all line to 1px high and the color */
+    background-color: lightskyblue;
+    height: 1px;
+}
+.header-buttons {
+    background-color: red;
+    color: white;
+    /*set the outside border to curve the corners*/
+    border-radius: 6px;
+    /*originally there is an underline for the links, we turn that and  a few other things off*/
+    text-decoration: none;
+    font-size: 18px;
+}
+/*a:hover = when u go over all the a (links) it will change the colors of it*/
+a:hover {
+    background-color: greenyellow;
+    color: magenta;
+}
+/*position the "search for:" */
+.search {
+    color:orangered;
+    /*set it to relative will allow u to move it from the original position (left, right, top, bottom, + , - */
+    position: relative;
+    top: 16px;
+}
+/*make distance between input and table*/
+#item-search {
+    margin-bottom: 15px;
+}
+/*set still for all input*/
+input {
+    border-color:red;
+    width: 80%;
+    font-size: 20px;
+}
+/*style search button*/
+#search-button {
+    background-color: red;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    width: 10%;
+    height: 3em;
+}
+/*table header style*/
+th {
+    background-color: aqua;
+    padding: 20px;
+}
+/*table data style*/
+td {
+    font-size: 20px;
+}
+/*centering the numbers in the table*/
+.centered {
+    text-align: center;
+}
+#average {
+    font-weight: bold;
+}

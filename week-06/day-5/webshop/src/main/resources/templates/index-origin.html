@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <title>Awesome WebsHop</title>
+
+</head>
+<body>
+    <header><h1>My Shop</h1></header>
+    <hr>
+    <div id ="head-container">
+        <button class="header-buttons">only available</button>
+        <button class="header-buttons">cheapest first</button>
+        <button class="header-buttons">contains nike</button>
+        <button class="header-buttons">average stock</button>
+        <button class="header-buttons">most expensive available</button>
+    </div>
+
+    <div><p>Search for:</p>
+    <label for="item-search"></label>
+    <input type="search" id="item-search" name="search-item" placeholder="...something like nike"
+           aria-label="Search through site content">
+    <button>Search</button>
+    </div>
+<table>
+    <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Quantity of stock</th>
+    </tr>
+    <tr th:each="items: ${itemsList}">
+        <td th:text="${items.name}"/>
+        <td th:text="${items.description}"/>
+        <td th:text="${items.price}"/>
+        <td th:text="${items.quantityOfStock}"/>
+    </tr>
+</table>
+    <div><p th:text="${noItemMessage}"></p></div>
+</body>
+</html>

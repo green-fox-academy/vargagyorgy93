@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Basic Webshop</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<header>
+    <h1>My Shop</h1>
+</header>
+<div id ="head-container">
+    <button class="header-buttons">only available</button>
+    <button class="header-buttons">cheapest first</button>
+    <button class="header-buttons">contains nike</button>
+    <button class="header-buttons">average stock</button>
+    <button class="header-buttons">most expensive available</button>
+</div>
+<div>
+    <p>Search for:</p>
+    <label for="item-search"></label>
+    <input placeholder="...something like nike" type="search" id="item-search" name="search-item"
+           aria-label="Search through site content">
+    <button>Search</button>
+</div>
+<table>
+    <tr>
+        <th>Average stock: </th>
+        <td th:text="${itemsList}"/>
+    </tr>
+</table>
+</body>
+</html>
