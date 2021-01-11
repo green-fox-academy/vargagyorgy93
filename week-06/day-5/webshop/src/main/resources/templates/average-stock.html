@@ -17,11 +17,13 @@
     <a href="average-stock" class="header-buttons">average stock</a>
     <a href="/most-expensive-available" class="header-buttons">most expensive available</a>
 </div>
-<div ><p class="search">Search for:</p>
-    <input type="search" id="item-search" name="search-item" placeholder="...something like nike"
-           aria-label="Search through site content">
-    <button id="search-button" >Search</button>
-</div>
+<form action="/search-bar" method="post">
+    <div ><p class="search">Search for:</p>
+        <input type="search" id="searchedItem" name="searchedItem" placeholder="...something like nike"
+               aria-label="Search through site content">
+        <button id="search-button" >Search</button>
+    </div>
+</form>
 <table>
     <tr id="average">
         <th>Average stock: </th>

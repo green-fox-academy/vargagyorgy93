@@ -5,6 +5,7 @@
     display: flex;
     /*set the link apart of each other with evenly distributed spaces*/
     justify-content: space-between;
+    text-transform: uppercase;
 }
 /*take all the decorations of from the links*/
 a{

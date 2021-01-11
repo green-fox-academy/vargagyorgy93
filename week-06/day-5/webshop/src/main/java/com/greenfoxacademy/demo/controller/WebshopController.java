@@ -4,6 +4,8 @@ import com.greenfoxacademy.demo.model.ShopItem;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -16,11 +18,11 @@ public class WebshopController {
     List<ShopItem> shopItems = new ArrayList<>();
 
     public WebshopController() {
-        shopItems.add(new ShopItem("Running shoes", "Nike running shoes for every day soprt", 1000.0, 5));
-        shopItems.add(new ShopItem("Printer", "Some HP printer that will print pages", 3000.0, 2));
-        shopItems.add(new ShopItem("Coca cola", "0.5l standard coke", 25.0, 0));
-        shopItems.add(new ShopItem("Wokin", "Chicken with fried rice and WOKIN sauce", 119.00, 100));
-        shopItems.add(new ShopItem("T-shirt", "Blue with a corgi on bike", 300.00, 1));
+        shopItems.add(new ShopItem("Running shoes", "Nike running shoes for every day sport", 1000.0, 5, "Kc"));
+        shopItems.add(new ShopItem("Printer", "Some HP printer that will print pages", 3000.0, 2, "Kc"));
+        shopItems.add(new ShopItem("Coca cola", "0.5l standard coke", 25.0, 0, "Kc"));
+        shopItems.add(new ShopItem("Wokin", "Chicken with fried rice and WOKIN sauce", 119.00, 100, "Kc"));
+        shopItems.add(new ShopItem("T-shirt", "Blue with a corgi on bike", 300.00, 1, "Kc"));
     }
 
     @GetMapping("/webshop")
@@ -55,11 +57,10 @@ public class WebshopController {
                         .toLowerCase()
                         .contains("nike"))
                 .collect(Collectors.toList());
-        model.addAttribute("itemsList", containsNike);
         if (containsNike.isEmpty()) {
             model.addAttribute("noItemMessage", "No Nike found");
         } else {
-            model.addAttribute("noItemMessage", "");
+            model.addAttribute("itemsList", containsNike);
         }
         return "index";
     }
@@ -84,4 +85,22 @@ public class WebshopController {
         model.addAttribute("itemsList", averageStock);
         return "average-stock";
     }
+
+    @PostMapping("/search-bar")
+    public String searchBar(Model model, @RequestParam String searchedItem) {
+        List<ShopItem> listOfSearchedItems = shopItems
+                .stream()
+                .filter(s -> (s.getDescription() + s.getName())
+                        .toLowerCase()
+                        .contains(searchedItem.toLowerCase()))
+                .collect(Collectors.toList());
+        model.addAttribute("itemsList", listOfSearchedItems);
+        if (listOfSearchedItems.isEmpty()) {
+            model.addAttribute("noItemMessage", "No item found");
+        } else {
+            model.addAttribute("noItemMessage", "");
+        }
+        return "index";
+    }
+
 }

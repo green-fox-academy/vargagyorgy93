@@ -5,12 +5,14 @@ public class ShopItem {
     private String description;
     private Double price;
     private Integer quantityOfStock;
+    private String currency = "mari";
 
-    public ShopItem(String name, String description, Double price, Integer quantityOfStock) {
+    public ShopItem(String name, String description, Double price, Integer quantityOfStock, String currency) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.quantityOfStock = quantityOfStock;
+        this.currency = currency;
     }
 
     public String getName() {
@@ -43,6 +45,14 @@ public class ShopItem {
 
     public void setQuantityOfStock(Integer quantityOfStock) {
         this.quantityOfStock = quantityOfStock;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 }
 
