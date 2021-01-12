@@ -1,0 +1,23 @@
+Exercise 1 solution : select title from movie where director = "Steven Spielberg";
+
+Exercise 2 sulution: select DISTINCT year from movie inner join rating on movie.mID = rating.mID where rating.stars >
+ 3 order by year;
+
+Exercise 3 sulution:  select title from movie where movie.mID NOT IN (select rating.mID from rating);
+
+Exercise 4 sulution: select name from reviewer inner join rating on reviewer.rID = rating.rID where ratingDate is nul
+l;
+
+Exercise 5 sulution: 
+- sort by reviewer name : select reviewer.name, movie.title, rating.stars, rating.ratingDate from reviewer inner join rati
+ng on reviewer.rID = rating.rID inner join movie on movie.mID = rating.mID order by reviewer.name;
+
+- sort by movie title : select reviewer.name, movie.title, rating.stars, rating.ratingDate from reviewer inner join rati
+ng on reviewer.rID = rating.rID inner join movie on movie.mID = rating.mID order by movie.title;
+
+- sort by number of stars : select reviewer.name, movie.title, rating.stars, rating.ratingDate from reviewer inner join rati
+ng on reviewer.rID = rating.rID inner join movie on movie.mID = rating.mID order by rating.stars;
+
+Exercise 6 sulution: select reviewer.name, movie.title from reviewer inner join rating as rating1 on reviewer.rID = rating1.rID inner join movie on rating1.mID = movie.mID inner join rating as rating2 on reviewer.rID = ratin
+g2.rID where rating1.rID+rating1.mID = rating2.rID+rating2.mID AND rating1.rID+rating1.mID+rating1.stars < rating2.rID+rating2.mID+rating2.stars AND rating1.ratingDate < rating2.ratingDate;
+
