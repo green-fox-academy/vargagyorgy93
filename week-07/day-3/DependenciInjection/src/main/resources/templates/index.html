@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org" xmlns:href="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome Something</title>
+</head>
+<body th:style="'background-color:' + ${randomColor}">
+<a href="http://localhost:8080//useful/email?email=is@this.valid" target="_blank">Hello World!</a>
+<p th:style="'color:' + ${color}" th:text="${email}"></p>
+</body>
+</html>
