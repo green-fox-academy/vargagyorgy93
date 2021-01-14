@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Awesome Programmer Fox</title>
+</head>
+<body>
+<ul>
+    <li><a href="http://localhost:8080/login">Information</a></li>
+    <li><a href="http://localhost:8080/nutrition-store">Nutrition Store</a></li>
+    <li><a href="http://localhost:8080/trick-center">Trick Center</a></li>
+</ul>
+
+<form method="post" action="/nutrition-store">
+    <label for="foods">Food</label>
+    <select id="foods" name="food">
+        <option value="pizza">Pizza</option>
+        <option value="apple">Apple</option>
+        <option value="mango">Mango</option>
+        <option value="pudding">Puding</option>
+    </select>
+    <label for="drink">Drink</label>
+    <select id="drink" name="drink">
+        <option value="milk">Milk</option>
+        <option value="cappy">Cappy</option>
+        <option value="water">Water</option>
+        <option value="lemonade">Lemonade</option>
+    </select>
+    <button type="submit">GO</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Awesome Programmer Fox</title>
+</head>
+<body>
+<ul>
+    <li><a href="http://localhost:8080/login">Information</a></li>
+    <li><a href="http://localhost:8080/nutrition-store">Nutrition Store</a></li>
+    <li><a href="http://localhost:8080/trick-center">Trick Center</a></li>
+</ul>
+<img src="greenfox-fox.png">
+<p th:text="'This is Mr. ' + ${foxName} + '. Currently living on ' + ${foxFood}  +
+' and ' + ${foxDrink} + '. He knows ' +${numberOfTricks} + ' tricks.'"></p>
+<h1>Known tricks</h1>
+<table>
+    <tr th:each="trick: ${Tricks}">
+        <ul>
+            <li td th:text="${trick}"></li>
+        </ul>
+    </tr>
+</table>
+<p th:text="${empty}"/>
+</body>
+</html>

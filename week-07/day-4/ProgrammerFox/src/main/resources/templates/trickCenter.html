@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Awesome Programmer Fox</title>
+</head>
+<body>
+<ul>
+    <li><a href="http://localhost:8080/login">Information</a></li>
+    <li><a href="http://localhost:8080/nutrition-store">Nutrition Store</a></li>
+    <li><a href="http://localhost:8080/trick-center">Trick Center</a></li>
+</ul>
+
+<form method="post" action="/trick-center">
+    <label for="tricks">Tricks</label>
+    <select id="tricks" name="trick">
+        <option th:text="${trick1}">write HTML</option>
+        <option th:text="${trick2}">code in Java</option>
+        <option th:text="${trick3}">break dance</option>
+        <option th:text="${trick4}">shoot with gun</option>
+    </select>
+    <button type="submit">Learn</button>
+</form>
+</body>
+</html>
