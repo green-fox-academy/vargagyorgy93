@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome Todo app</title>
+</head>
+<body>
+<h1>List of Assignees:</h1>
+<!--<form action="http://localhost:8080/list" method="post" id="findTodo">-->
+<!--    <label for="todos"></label>-->
+<!--    <input type="text" placeholder="Search todo..." id="todos" name="findTodo">-->
+<!--    <button type="submit" form="findTodo">Submit</button>-->
+<!--</form>-->
+<!--<br>-->
+<!--<a href="http://localhost:8080/list/addNew">Add new todo</a>-->
+<table>
+    <tr th:each="assignees: ${listOfAssignees}">
+        <td th:text="${assignees.name}"></td>
+        <td th:text="${assignees.email}"></td>
+    </tr>
+</table>
+</body>
+</html>

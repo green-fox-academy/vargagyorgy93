@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome Todo app</title>
+</head>
+<body>
+<h1>Add new todo</h1>
+<form action="http://localhost:8080/list/addNew" method="post" id="newTodo">
+    <label for="todos"></label>
+    <input type="text" id="todos" name="newTodo"><br>
+</form>
+<button type="submit" form="newTodo">Submit</button>
+</body>
+</html>

@@ -1,5 +1,6 @@
 package com.greenfox.demo.controller;
 
+import com.greenfox.demo.service.Services;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -10,13 +11,10 @@ import java.util.List;
 @Controller
 public class MainController {
     public static Fox fox = new Fox();
-    public static List<String> tricksOptions = new ArrayList<>();
+    Services services = new Services();
 
     @GetMapping("/")
     public String landing(Model model) {
-//        if (fox.getTricks().size() != 0) {
-//            fox.getTricks().clear();
-//        }
         model.addAttribute("foxName", fox.getName());
         model.addAttribute("foxFood", fox.getFood());
         model.addAttribute("foxDrink", fox.getDrink());
@@ -56,22 +54,18 @@ public class MainController {
 
     @GetMapping("/trick-center")
     public String getTrickCenter(Model model, @RequestParam(required = false) String trick) {
-
-        tricksOptions.add("write HTML");
-        tricksOptions.add("code in Java");
-        tricksOptions.add("break dance");
-        tricksOptions.add("shoot with gun");
-        model.addAttribute("trick1", tricksOptions.get(0));
-        model.addAttribute("trick2", tricksOptions.get(1));
-        model.addAttribute("trick3", tricksOptions.get(2));
-        model.addAttribute("trick4", tricksOptions.get(3));
+        services.addToTrickOptionsList();
+        model.addAttribute("trick1", services.getTrickOptionsIndex(0));
+        model.addAttribute("trick2", services.getTrickOptionsIndex(1));
+        model.addAttribute("trick3", services.getTrickOptionsIndex(2));
+        model.addAttribute("trick4", services.getTrickOptionsIndex(3));
         return "trickCenter";
     }
 
     @PostMapping("/trick-center")
     public String postTrickCenter(Model model, String trick) {
-        fox.addTricks(trick);
-        model.addAttribute("Tricks", fox.getTricks());
+        services.addTricks(trick);
+        model.addAttribute("Tricks", services.getTricks());
         return "redirect:/";
     }
 
