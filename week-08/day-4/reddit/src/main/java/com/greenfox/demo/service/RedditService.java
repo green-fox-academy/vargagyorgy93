@@ -11,6 +11,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Service
 public class RedditService {
@@ -81,9 +82,12 @@ public class RedditService {
                 pageNumbers += 1;
             }
         }
-        for (int i = 0; i < pageNumbers; i++) {
-            pageList.add(i + 1L);
-        }
+//        for (int i = 0; i < pageNumbers; i++) {
+//            pageList.add(i + 1L);
+//        }
+
+        pageList = IntStream.range(0, pageNumbers).mapToObj(i -> i + 1L).collect(Collectors.toList());
+
         return pageList;
     }
 
