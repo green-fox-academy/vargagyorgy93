@@ -26,7 +26,7 @@ public class RedditService {
 
     public List<Post> getPostListInOrder(Long pageNumber) {
         long step;
-        if (pageNumber != null) {
+       if (pageNumber != null) {
             step = ((pageNumber * 10) - 10);
         } else {
             step = 0L;
@@ -39,6 +39,8 @@ public class RedditService {
         postListInOrder = postListInOrder.stream().limit(10).collect(Collectors.toList());
 
         return postListInOrder;
+
+
     }
 
 //    @Query( value = "SELECT * FROM post ORDER BY rating DESC", nativeQuery = true)
